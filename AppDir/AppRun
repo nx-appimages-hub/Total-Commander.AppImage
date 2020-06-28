@@ -1,0 +1,13 @@
+#! /bin/bash
+set -e
+
+WINEPREFIX=${HOME}/.config/Total-Commander
+ls ${WINEPREFIX} || mkdir -p ${WINEPREFIX}
+
+export WINEDEBUG=-all
+export WINEPREFIX=${WINEPREFIX}
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${APPDIR}/wine/lib64:${APPDIR}/wine/lib64/wine:${APPDIR}/wine/lib:${APPDIR}/wine/lib/wine
+
+exec ${APPDIR}/wine/bin/wine ${APPDIR}/app/TOTALCMD64.EXE $@
+
+exit 0

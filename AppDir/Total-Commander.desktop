@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Total Commander
+GenericName=Total Commander
+Comment=Total CMD
+Exec=AppRun %F
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=Total-Commander
+Categories=Office;
+MimeType=text/plain;
+StartupWMClass=totalcmd
+StartupNotify=true
