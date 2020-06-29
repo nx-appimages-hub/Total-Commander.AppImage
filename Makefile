@@ -7,12 +7,12 @@ all:
 	wget --output-document=${DESTINATION} --continue ${SOURCE}
 	tar xfvj ${DESTINATION}
 	cp -r wineversion/3.4 AppDir/wine
-	
-	
+
+
 	chmod +x AppDir/AppRun
 	export ARCH=x86_64 && ./bin/appimagetool.AppImage AppDir $(OUTPUT)
 	chmod +x $(OUTPUT)
-	
+
 	rm -rf ./${DESTINATION}
 	rm -rf ./wineversion
 	rm -rf ./AppDir/wine

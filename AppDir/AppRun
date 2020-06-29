@@ -6,7 +6,12 @@ ls ${WINEPREFIX} || mkdir -p ${WINEPREFIX}
 
 export WINEDEBUG=-all
 export WINEPREFIX=${WINEPREFIX}
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${APPDIR}/wine/lib64:${APPDIR}/wine/lib64/wine:${APPDIR}/wine/lib:${APPDIR}/wine/lib/wine
+
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${APPDIR}/wine/lib64/wine
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${APPDIR}/wine/lib64
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${APPDIR}/wine/lib/wine
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${APPDIR}/wine/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 
 exec ${APPDIR}/wine/bin/wine ${APPDIR}/app/TOTALCMD64.EXE $@
 
