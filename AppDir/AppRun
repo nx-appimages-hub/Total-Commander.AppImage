@@ -1,6 +1,8 @@
 #! /bin/bash
 set -e
 
+#APPDIR=.
+
 WINEPREFIX=${HOME}/.config/Total-Commander
 ls ${WINEPREFIX} || mkdir -p ${WINEPREFIX}
 
@@ -13,6 +15,6 @@ LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${APPDIR}/wine/lib/wine
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${APPDIR}/wine/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 
-exec ${APPDIR}/wine/bin/wine ${APPDIR}/app/TOTALCMD64.EXE $@
+${APPDIR}/wine/bin/wine64 ${APPDIR}/app/TOTALCMD64.EXE $@
 
 exit 0
