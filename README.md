@@ -1,1 +1,1 @@
-# Total-Commander.AppImage
+# Leafpad.AppImage
